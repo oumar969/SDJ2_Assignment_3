@@ -1,0 +1,12 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ï¾àïüÿÿÿÿ
+V	java:S125""<This block of commented-out lines of code should be removed.(á©ÿøÿÿÿÿ
+W
+java:S1126'"AReplace this if-then-else statement by a single return statement.(Ô…ß®
+b	java:S100."NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿¯Ò4
+
+java:S1130."lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(¿¯Ò4
+S	java:S1063"9Replace this use of System.out or System.err by a logger.(˜¡Üúıÿÿÿÿ
+S	java:S1066"9Replace this use of System.out or System.err by a logger.(¶ŸİÏıÿÿÿÿ
+X
+java:S1128"BRemove this unused import 'Client.View.Chat.ChatSystemController'.(§ñ²¬

@@ -1,0 +1,12 @@
+
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(óş/
+<
+java:S1659"'Declare "chatScene" on a separate line.(Ì‡ŒX
+m
+java:S1450"XRemove the "chatScene" field and declare it as a local variable in the relevant methods.(Ì‡ŒX
+n
+java:S1450"YRemove the "loginScene" field and declare it as a local variable in the relevant methods.(Ì‡ŒX
+‡
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(åÓíüøÿÿÿÿ
+B
+java:S11728",Remove this unused method parameter "error".(õ¯ş¾

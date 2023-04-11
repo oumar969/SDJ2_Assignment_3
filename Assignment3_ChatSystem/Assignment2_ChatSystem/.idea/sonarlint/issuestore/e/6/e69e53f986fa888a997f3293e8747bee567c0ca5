@@ -1,0 +1,13 @@
+
+t	java:S1351"YReduce the total number of break and continue statements in this loop to use at most one.(¤èÄ78¡Õœó0
+m
+java:S1301B"KReplace this "switch" statement by "if" statements to increase readability.(İ±æ‡ûÿÿÿÿ8¢Õœó0
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(åÜ•¹ûÿÿÿÿ8¥Õœó0
+t
+java:S3776/"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Ê¯Ä¼úÿÿÿÿ8ÜÈ¬¡ó0
+C	java:S131B""Add a default case to this switch.(İ±æ‡ûÿÿÿÿ8ù‚–¡ó0
+]	java:S1258"<This block of commented-out lines of code should be removed.(®ã³¬øÿÿÿÿ8ù‚–¡ó0
+L
+java:S1656["/Remove or correct this useless self-assignment.(»¶¤İ8éÈ¬¡ó0
+L
+java:S1068"*Remove this unused "socket" private field.(Å’¬Úşÿÿÿÿ8…ƒ–¡ó0
