@@ -5,6 +5,7 @@ import Share.User;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.rmi.RemoteException;
 import java.util.List;
 
 public class LoginImp implements loginModel
@@ -12,7 +13,7 @@ public class LoginImp implements loginModel
 	private Client client;
 	private User user;
 	private PropertyChangeSupport support;
-	public LoginImp(Client client)
+	public LoginImp(Client client) throws RemoteException
 	{
 		this.client=client;
 		support= new PropertyChangeSupport(this);
@@ -40,14 +41,14 @@ public class LoginImp implements loginModel
 		return true;
 	}
 
-	@Override public boolean login(User user)
+	@Override public boolean login(User user) throws RemoteException
 	{
 		boolean isloginPossible= client.login(user);
 		if (isloginPossible)this.user=user;
 		return isloginPossible;
 	}
 
-	@Override public List<String> getAllUsers()
+	@Override public List<String> getAllUsers() throws RemoteException
 	{
 		return client.getUserList();
 	}

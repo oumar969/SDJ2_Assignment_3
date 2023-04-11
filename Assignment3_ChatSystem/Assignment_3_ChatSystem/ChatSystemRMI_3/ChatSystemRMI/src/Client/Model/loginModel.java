@@ -4,6 +4,7 @@ package Client.Model;
 import Share.User;
 import Share.util.Subject;
 
+import java.rmi.RemoteException;
 import java.util.List;
 
 public interface loginModel extends Subject
@@ -15,6 +16,6 @@ public interface loginModel extends Subject
 	boolean checkLoginUp(String username);
 
 
-	boolean login(User user);
-	List<String> getAllUsers();
+	boolean login(User user) throws RemoteException;
+	List<String> getAllUsers() throws RemoteException;
 }

@@ -7,38 +7,39 @@ import Share.util.Request;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
-public class LoginHandler implements Login
+public class LoginHandler extends UnicastRemoteObject implements Login
 
 {
   private PropertyChangeSupport support;
   private ListOfUsers listOfUsers;
 
-  public LoginHandler()
+  public LoginHandler()throws RemoteException
   {
     support = new PropertyChangeSupport(this);
     listOfUsers = new ListOfUsers();
   }
 
-  @Override public boolean addUser(User user)
+  @Override public boolean addUser(User user)throws RemoteException
   {
     listOfUsers.addUser(user);
     return true;
   }
 
-  @Override public boolean login(User user)
+  @Override public boolean login(User user)throws RemoteException
   {
     boolean status = listOfUsers.haveUsers(user);
     if (status) {
 
       support.firePropertyChange(Request.TYPE.ONLOGGEDINADDUSER.toString(),null,user);
-     // System.out.println(support.hasListeners(Request.TYPE.ONLOGGEDINADDUSER.toString()));
     }
     return status;
   }
 
-  @Override public List<String> getAllUsers()
+  @Override public List<String> getAllUsers()throws RemoteException
   {
     return listOfUsers.userNames();
   }

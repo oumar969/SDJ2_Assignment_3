@@ -10,32 +10,35 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.rmi.RemoteException;
 import java.util.List;
+import java.rmi.server.UnicastRemoteObject;
 
-public class ClientRMI implements Client
+
+public class ClientRMI  extends UnicastRemoteObject implements Client
 {
   private PropertyChangeSupport support;
   private User user;
 
-  public ClientRMI()
+  public ClientRMI()throws RemoteException
   {
     support = new PropertyChangeSupport(this);
   }
 
-   public List<String> getUserList()
+   public List<String> getUserList()throws RemoteException
   {
     Request response = request(null, Request.TYPE.USERLIST.toString());
     return (List<String>) response.getArg();
   }
 
-   public boolean addUser(User user1)
+   public boolean addUser(User user1)throws RemoteException
   {
     Request response = request(user1, Request.TYPE.ADDUSER.toString());
     assert response != null;
     return (boolean) response.getArg();
   }
 
-   public boolean login(User user)
+   public boolean login(User user)throws RemoteException
   {
     try
     {
@@ -63,7 +66,7 @@ public class ClientRMI implements Client
     return (List<Message>) response.getArg();
   }
 */
-   public void sendMessage(Message message)
+   public void sendMessage(Message message)throws RemoteException
   {
     try
     {
@@ -76,13 +79,13 @@ public class ClientRMI implements Client
     }
   }
 
-  public List<Message> getPreviousMessages()
+  public List<Message> getPreviousMessages()throws RemoteException
   {
     Request response = request(null,"getPreviousMessages");
     return (List<Message>) response.getArg();
   }
 
-  public void startClient()
+  public void startClient()throws RemoteException
   {
     this.user=user;
     try
@@ -104,7 +107,7 @@ public class ClientRMI implements Client
 
   }
 
-  private Request request(Object arg, String type)
+  private Request request(Object arg, String type)throws RemoteException
   {
     try
     {
@@ -124,7 +127,7 @@ public class ClientRMI implements Client
   }
 
   private void listenToServer(ObjectInputStream inputStream,
-      ObjectOutputStream outputStream)
+      ObjectOutputStream outputStream)throws RemoteException
   {
     try
     {

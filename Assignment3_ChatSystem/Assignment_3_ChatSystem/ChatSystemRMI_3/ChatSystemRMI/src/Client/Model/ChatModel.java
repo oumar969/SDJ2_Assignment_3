@@ -5,14 +5,15 @@ package Client.Model;
 import Share.Message;
 import Share.util.Subject;
 
+import java.rmi.RemoteException;
 import java.util.List;
 
 public interface ChatModel extends Subject
 {
-  List<String> getUsersname();
+  List<String> getUsersname() throws RemoteException;
 
-  List<Message> getMessages();
-  void sendMessage(Message message);
+  List<Message> getMessages() throws RemoteException;
+  void sendMessage(Message message) throws RemoteException;
 
 
 }

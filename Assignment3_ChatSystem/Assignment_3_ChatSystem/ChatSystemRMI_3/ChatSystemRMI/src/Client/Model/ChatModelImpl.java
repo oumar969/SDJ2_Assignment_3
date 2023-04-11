@@ -8,6 +8,7 @@ import Share.util.Request;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.rmi.RemoteException;
 import java.util.List;
 
 public class ChatModelImpl implements ChatModel
@@ -34,18 +35,18 @@ public class ChatModelImpl implements ChatModel
     support.firePropertyChange("addMessage",null,message);
   }
 
-  @Override public List<String> getUsersname()
+  @Override public List<String> getUsersname() throws RemoteException
   {
     return client.getUserList();
 
   }
 
-  @Override public List<Message> getMessages()
+  @Override public List<Message> getMessages() throws RemoteException
   {
     return client.getPreviousMessages();
   }
 
-  @Override public void sendMessage(Message message)
+  @Override public void sendMessage(Message message) throws RemoteException
   {
     client.sendMessage(message);
   }
