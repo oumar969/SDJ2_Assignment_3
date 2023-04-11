@@ -3,9 +3,10 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/Assignment3_ChatSystem/Assignment2_ChatSystem/ChatSystemSocket 2/ChatSystemSocket/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Assignment3_ChatSystem/Assignment_3_ChatSystem/ChatSystemRMI_3/ChatSystemRMI/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>
